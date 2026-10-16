@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/css/glightbox.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -152,11 +153,54 @@
       </div>
     </section>
 
-    <!-- Phase 4: work -->
-    <section class="section" id="work" data-phase="4" aria-labelledby="work-title">
+    <!-- Work: horizontal scroll strip. Filter categories are placeholders (a/b/c): rename the buttons
+         and keep data-cat in sync. Every image is a placeholder SVG — replace with the client's own work
+         (WebP under 300KB, 51 photos on their Google listing; ask permission). -->
+    <section class="section" id="work" aria-labelledby="work-title">
       <div class="container">
         <p class="label">02 / Work</p>
         <h2 class="display" id="work-title">[TODO: heading]</h2>
+
+        <div class="work-filters" role="group" aria-label="Filter photos by category">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="a" aria-pressed="false">[TODO: category]</button>
+          <button type="button" class="chip" data-filter="b" aria-pressed="false">[TODO: category]</button>
+          <button type="button" class="chip" data-filter="c" aria-pressed="false">[TODO: category]</button>
+        </div>
+      </div>
+
+      <div class="work-wrap">
+        <ul class="work-strip" id="work-strip" tabindex="0" aria-label="Photo gallery, scroll sideways">
+          <li data-cat="a"><a class="work-item" href="img/work/work-a-1.svg" data-desc="[TODO: caption]"><img src="img/work/work-a-1.svg" width="1000" height="750" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="b"><a class="work-item" href="img/work/work-b-2.svg" data-desc="[TODO: caption]"><img src="img/work/work-b-2.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="c"><a class="work-item" href="img/work/work-c-4.svg" data-desc="[TODO: caption]"><img src="img/work/work-c-4.svg" width="800" height="800" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="a"><a class="work-item" href="img/work/work-a-3.svg" data-desc="[TODO: caption]"><img src="img/work/work-a-3.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="b"><a class="work-item" href="img/work/work-b-4.svg" data-desc="[TODO: caption]"><img src="img/work/work-b-4.svg" width="1000" height="750" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="c"><a class="work-item" href="img/work/work-c-1.svg" data-desc="[TODO: caption]"><img src="img/work/work-c-1.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="a"><a class="work-item" href="img/work/work-a-2.svg" data-desc="[TODO: caption]"><img src="img/work/work-a-2.svg" width="800" height="800" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="b"><a class="work-item" href="img/work/work-b-3.svg" data-desc="[TODO: caption]"><img src="img/work/work-b-3.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="c"><a class="work-item" href="img/work/work-c-3.svg" data-desc="[TODO: caption]"><img src="img/work/work-c-3.svg" width="1000" height="750" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="a"><a class="work-item" href="img/work/work-a-4.svg" data-desc="[TODO: caption]"><img src="img/work/work-a-4.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="b"><a class="work-item" href="img/work/work-b-1.svg" data-desc="[TODO: caption]"><img src="img/work/work-b-1.svg" width="800" height="800" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+          <li data-cat="c"><a class="work-item" href="img/work/work-c-2.svg" data-desc="[TODO: caption]"><img src="img/work/work-c-2.svg" width="800" height="1000" loading="lazy" alt="Placeholder photo, replace with client work"><span class="frame-no label"></span></a></li>
+        </ul>
+      </div>
+
+      <div class="container work-foot">
+        <div class="work-nav">
+          <button type="button" class="icon-btn work-prev" aria-label="Previous photos">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+          </button>
+          <button type="button" class="icon-btn work-next" aria-label="Next photos">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+          </button>
+          <span class="label work-count" aria-live="polite"></span>
+        </div>
+        <!-- Instagram handle not on the Google listing: replace href with the real profile URL -->
+        <p class="work-ig">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" data-track="instagram_work">[TODO: Instagram handle]</a>
+          <a class="btn btn--outline" href="https://www.instagram.com/" target="_blank" rel="noopener" data-track="instagram_work">[TODO: button]</a>
+        </p>
       </div>
     </section>
 
@@ -222,6 +266,7 @@
     <div class="container"><p class="label">Footer</p></div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

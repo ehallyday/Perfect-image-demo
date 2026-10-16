@@ -411,6 +411,70 @@ a:hover { color: var(--accent-hover); }
   .steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
 }
 
+/* ---------- Work: horizontal scroll strip ---------- */
+.work-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 2.5rem 0 2rem; }
+.chip {
+  min-height: 2.5rem;
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--text-strong);
+  background: transparent;
+  color: var(--text-strong);
+  font: 500 0.8rem/1 var(--font-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.chip:hover { background: var(--base-alt); }
+.chip[aria-pressed="true"] { background: var(--text-strong); color: var(--base); }
+
+.work-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0.75rem max(var(--gutter), calc((100vw - var(--max)) / 2)) 1rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+  scrollbar-color: var(--text-strong) transparent;
+}
+.work-strip li { flex: none; scroll-snap-align: start; }
+.work-strip li[hidden] { display: none; }
+.work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--text-strong);
+  text-decoration: none;
+}
+.work-item img {
+  height: 16rem;
+  width: auto;
+  background: var(--base-alt);
+  transition: opacity 0.2s;
+}
+.work-item:hover img { opacity: 0.88; }
+.frame-no { margin: 0; }
+@media (min-width: 48rem) {
+  .work-item img { height: 24rem; }
+}
+
+.work-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.work-nav { display: flex; align-items: center; gap: 0.25rem; }
+.work-nav .icon-btn { border: 1.5px solid var(--text-strong); }
+.work-count { margin: 0 0 0 0.75rem; }
+.work-ig { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 0; font-weight: 600; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

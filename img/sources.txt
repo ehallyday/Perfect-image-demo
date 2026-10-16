@@ -1,2 +1,3 @@
 Image sources (stock for the demo — replace with the client's own work after getting permission).
 Format: filename | source URL | licence
+img/work/work-*.svg | generated placeholder (scripted), not a photo | n/a — replace with client work

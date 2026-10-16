@@ -82,5 +82,72 @@
     if (e.matches) setMenu(false);
   });
 
+  /* Work: filters, frame numbers, strip arrows, lightbox (GLightbox) */
+  var strip = document.getElementById('work-strip');
+  if (strip) {
+    var items = Array.prototype.slice.call(strip.children);
+    var chips = document.querySelectorAll('.work-filters .chip');
+    var count = document.querySelector('.work-count');
+    var lightbox = null;
+
+    function visibleItems() {
+      return items.filter(function (li) { return !li.hidden; });
+    }
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function buildLightbox() {
+      if (typeof window.GLightbox !== 'function') return;
+      if (lightbox) lightbox.destroy();
+      var elements = visibleItems().map(function (li) {
+        var a = li.querySelector('a');
+        return {
+          href: a.getAttribute('href'),
+          type: 'image',
+          alt: li.querySelector('img').alt,
+          description: a.getAttribute('data-desc') || ''
+        };
+      });
+      lightbox = window.GLightbox({ elements: elements, loop: true, touchNavigation: true });
+    }
+
+    function applyFilter(cat) {
+      items.forEach(function (li) {
+        li.hidden = !(cat === 'all' || li.getAttribute('data-cat') === cat);
+      });
+      var vis = visibleItems();
+      vis.forEach(function (li, i) {
+        li.querySelector('.frame-no').textContent = pad(i + 1) + ' / ' + pad(vis.length);
+      });
+      count.textContent = vis.length + (vis.length === 1 ? ' frame' : ' frames');
+      strip.scrollLeft = 0;
+      buildLightbox();
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+        applyFilter(chip.getAttribute('data-filter'));
+      });
+    });
+
+    strip.addEventListener('click', function (e) {
+      var a = e.target.closest('a.work-item');
+      if (!a) return;
+      if (!lightbox) return; /* CDN blocked: the link just opens the image */
+      e.preventDefault();
+      lightbox.openAt(visibleItems().indexOf(a.parentNode));
+    });
+
+    function scrollStrip(dir) {
+      strip.scrollBy({ left: dir * strip.clientWidth * 0.8, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    document.querySelector('.work-prev').addEventListener('click', function () { scrollStrip(-1); });
+    document.querySelector('.work-next').addEventListener('click', function () { scrollStrip(1); });
+
+    /* GLightbox loads deferred before this script, so it is ready here */
+    applyFilter('all');
+  }
+
   window.PI.reduceMotion = reduceMotion;
 })();
