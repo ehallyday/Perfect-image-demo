@@ -3,7 +3,7 @@ Image sources: Pexels stock for the demo. Replace every one with the client's ow
 Each page is at https://www.pexels.com/photo/<id>/ . Files were resized and converted to WebP (each under 300KB).
 Format: file | Pexels photo id | used in
 
-img/hero-1.webp        | 11440539 | hero
+img/hero-1.webp        | supplied by project owner (img/hero1.jpeg) | hero (not Pexels)
 img/about-1.webp       | 27107622 | About (stock of a stranger: swap for the real photographer's portrait)
 img/offer-1.webp       | 33900396 | optional offers card 1
 img/pkg-1.webp         | 18789516 | package row: Portrait Session
