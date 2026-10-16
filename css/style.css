@@ -669,6 +669,34 @@ a:hover { color: var(--text-strong); }
   .float-actions { display: flex; }
 }
 
+/* ---------- No sideways wobble on phones ----------
+   Grid items default to min-width:auto, so one wide child (iOS Safari's date/time inputs, long words,
+   iframes) stretches a track past the screen and the whole page scrolls sideways. Let every grid and
+   flex child shrink instead. */
+.hero-grid > *, .about-grid > *, .book-grid > *, .faq-wrap > *, .footer-grid > *,
+.review-grid > *, .offer-grid > *, .steps > *, .trust-list > *, .pkg > *,
+.book-form > *, .field > *, .field-row > *, .header-inner > *, .work-foot > * { min-width: 0; }
+
+.field-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.field input, .field select, .field textarea { min-width: 0; max-width: 100%; }
+.field input[type="date"], .field input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+}
+.map iframe, .container, .section { max-width: 100%; }
+h1, h2, h3, p, li, dd, a { overflow-wrap: break-word; }
+
+/* Backstop: never allow a horizontal page scroll. `clip` does not create a scroll container. */
+html, body { overflow-x: clip; }
+
+@media (max-width: 23rem) {
+  .header-inner { gap: 0.5rem; }
+  .logo-name { font-size: 1.1rem; }
+  .logo-mark { width: 2.1rem; height: 2.1rem; }
+  .header-actions { gap: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
