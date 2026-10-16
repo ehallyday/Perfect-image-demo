@@ -4,8 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perfect Image Photography | Photographer in Rumuola, Port Harcourt</title>
-  <!-- Meta description: Phase 7 (final text comes from content.md once TODOs are filled) -->
-  <meta name="description" content="Perfect Image Photography is a professional photography service in Rumuola, Port Harcourt, available for shoots in and outside Port Harcourt.">
+  <!-- Meta description from content.md. Its "TODO: main services" and "TODO: hours" sentences are left out
+       until confirmed after the call; add them back then. -->
+  <meta name="description" content="Perfect Image Photography is a professional photography service in Rumuola, Port Harcourt, available for shoots in and outside Port Harcourt. Book online or call 0706 542 8557.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Perfect Image Photography | Photographer in Rumuola, Port Harcourt">
+  <meta property="og:description" content="Professional photography service in Rumuola, Port Harcourt, available for shoots in and outside Port Harcourt.">
+  <!-- TODO: add og:image and og:url once the client's own photo and the live domain exist -->
+
+  <!-- LocalBusiness schema: only facts from content.md. Opening hours are left out until the real studio
+       hours are confirmed ("Open 24 hours" on Google is TODO-CONFIRM). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Perfect Image Photography",
+    "description": "Professional photography service in Rumuola, Port Harcourt, available for shoots in and outside Port Harcourt.",
+    "telephone": "+2347065428557",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Timothy Lane, Aba Rd, Rumuola",
+      "addressLocality": "Port Harcourt",
+      "addressRegion": "Rivers",
+      "postalCode": "500262",
+      "addressCountry": "NG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.8333297,
+      "longitude": 7.0048054
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.3",
+      "reviewCount": "6"
+    },
+    "hasMap": "https://maps.app.goo.gl/2ZTGjPK1UAhJDNjm6"
+  }
+  </script>
   <meta name="theme-color" content="#F4EFE6">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
@@ -40,7 +76,7 @@
           <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#book">Book</a></li>
+          <li><a href="#book" data-track="book_nav">Book</a></li>
           <li class="nav-cta"><a class="btn btn--primary" href="#book" data-track="book_header">[TODO: Book Now / Check My Date]</a></li>
         </ul>
       </nav>

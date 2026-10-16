@@ -108,7 +108,14 @@
           description: a.getAttribute('data-desc') || ''
         };
       });
-      lightbox = window.GLightbox({ elements: elements, loop: true, touchNavigation: true });
+      lightbox = window.GLightbox({
+        elements: elements,
+        loop: true,
+        touchNavigation: true,
+        openEffect: reduceMotion ? 'none' : 'zoom',
+        closeEffect: reduceMotion ? 'none' : 'zoom',
+        slideEffect: reduceMotion ? 'none' : 'slide'
+      });
     }
 
     function applyFilter(cat) {
@@ -154,6 +161,11 @@
   if (form) {
     var success = document.getElementById('form-success');
     var required = ['name', 'phone', 'package', 'date'];
+
+    /* No past dates in the date picker */
+    var today = new Date();
+    form.elements.date.min = today.getFullYear() + '-' +
+      String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
 
     function fieldEl(n) { return form.elements[n]; }
     function setError(n, show) {
