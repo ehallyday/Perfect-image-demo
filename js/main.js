@@ -20,7 +20,7 @@
 
   /* WhatsApp links: the base href works without JS; JS adds the pre-filled message from content.md. */
   var WA_MESSAGES = {
-    general: "Hi Perfect Image Photography, I'd like to [TODO: book a session / check if you're available for my date]."
+    general: "Hi Perfect Image Photography, I'd like to book a session."
   };
   window.waLink = function (text) {
     return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
@@ -32,7 +32,7 @@
       var pkg = a.closest('[data-package]');
       msg = "Hi Perfect Image Photography, I'd like to book the " + (pkg ? pkg.getAttribute('data-package') : '[Package name]') + '.';
     } else {
-      msg = WA_MESSAGES[kind];
+      msg = a.getAttribute('data-wa-msg') || WA_MESSAGES[kind];
     }
     if (msg) a.href = window.waLink(msg);
   });

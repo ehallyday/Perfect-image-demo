@@ -3,21 +3,24 @@ Image sources: Pexels stock for the demo. Replace every one with the client's ow
 Each page is at https://www.pexels.com/photo/<id>/ . Files were resized and converted to WebP (each under 300KB).
 Format: file | Pexels photo id | used in
 
-img/hero-1.webp        | 29258125 | hero
+img/hero-1.webp        | 11440539 | hero
 img/about-1.webp       | 27107622 | About (stock of a stranger: swap for the real photographer's portrait)
-img/offer-1.webp       | 33900396 | optional offers card
-img/pkg-1.webp         | 18789516 | package row 1
-img/pkg-2.webp         | 31563146 | package row 2
-img/pkg-3.webp         | 18809775 | package row 3
-img/work/work-a-1.webp | 29368483 | work strip (category a)
-img/work/work-a-2.webp | 30861129 | work strip (category a)
-img/work/work-a-3.webp | 33931246 | work strip (category a)
-img/work/work-a-4.webp | 11440539 | work strip (category a)
-img/work/work-b-1.webp | 33737505 | work strip (category b)
-img/work/work-b-2.webp | 33257410 | work strip (category b)
-img/work/work-b-3.webp | 32223290 | work strip (category b)
-img/work/work-b-4.webp | 31841380 | work strip (category b)
-img/work/work-c-1.webp | 33992631 | work strip (category c)
-img/work/work-c-2.webp | 33900360 | work strip (category c)
-img/work/work-c-3.webp | 14500355 | work strip (category c)
-img/work/work-c-4.webp | 20434733 | work strip (category c)
+img/offer-1.webp       | 33900396 | optional offers card 1
+img/pkg-1.webp         | 18789516 | package row: Portrait Session
+img/pkg-2.webp         | 31563146 | package row: Couple Session
+img/pkg-3.webp         | 18809775 | package row: Birthday & Family Session
+img/work/work-a-1.webp | 29368483 | work strip (Portraits)
+img/work/work-a-2.webp | 30861129 | work strip (Portraits)
+img/work/work-a-3.webp | 33931246 | work strip (Portraits)
+img/work/work-a-4.webp | 29258125 | work strip (Portraits)
+img/work/work-b-1.webp | 33737505 | work strip (Couples)
+img/work/work-b-2.webp | 33257410 | work strip (Couples)
+img/work/work-b-3.webp | 32223290 | work strip (Couples)
+img/work/work-b-4.webp | 31841380 | work strip (Couples)
+img/work/work-c-1.webp | 33992631 | work strip (Family & Celebrations)
+img/work/work-c-2.webp | 33900360 | work strip (Family & Celebrations)
+img/work/work-c-3.webp | 14500355 | work strip (Family & Celebrations)
+img/work/work-c-4.webp | 20434733 | work strip (Family & Celebrations)
+img/pkg-4.webp         | 33257410 | package row: Wedding Coverage
+img/pkg-5.webp         | 20434733 | package row: Event Coverage
+img/offer-2.webp       | 33737505 | optional offers card 2

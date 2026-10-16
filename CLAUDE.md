@@ -16,14 +16,14 @@ Pick ONE option wherever you see "OPTION A / OPTION B" and delete the rest.
 
 ## What this is
 A one-page demo website for **Perfect Image Photography**, a photography service (Google category: "Photography service") in Rumuola, Port Harcourt, Nigeria. A customer review notes they shoot in and outside Port Harcourt.
-TODO: confirm type — studio / wedding / event / portrait photographer.
+Demo assumption (TODO-CONFIRM on the call): portraits, weddings, birthdays and events, in a studio and on location.
 
 It's a lead-generation page with these jobs, in this order of priority:
 <!-- TODO: reorder after the call. They have a street address, so this assumes a studio. -->
-1. **Bookings**: TODO: what the visitor does (e.g. pick a session and request a date)
+1. **Bookings**: the visitor picks a session and requests a date
 2. **Calls and WhatsApp**: one tap to reach Perfect Image Photography from any screen
 
-3. **Enquiries**: TODO: custom requests (e.g. events, shoots outside Port Harcourt, quotes)
+3. **Enquiries**: custom requests (weddings, events, shoots outside Port Harcourt, quotes)
 
 The portfolio exists to build trust and push visitors toward these actions. Every section ends with an action.
 
@@ -71,9 +71,9 @@ Copy for every section is in content.md under the matching heading.
 2. **Hero**: split screen per the signature choice above. Label, headline, subheadline and buttons from content.md. The primary button scrolls to the booking section; the secondary opens WhatsApp with the general message; the mobile-only call link is a `tel:` link.
 3. **Trust strip**: the items from content.md (incl. 4.3★ on Google) in a single row on desktop, wrapping to a grid on mobile.
 4. **Packages**: one card per package in content.md.
-   - **Bookable** packages (TODO: names) have a **Book this** button: it scrolls to the booking form and pre-selects that package.
-   - **Quote** packages (TODO: names) have a **Get a quote** button: it opens WhatsApp with the package message, filled with that package's name.
-   - TODO: highlighted package and its tag.
+   - **Bookable** packages (Portrait Session, Couple Session, Birthday & Family Session) have a **Book this** button: it scrolls to the booking form and pre-selects that package.
+   - **Quote** packages (Wedding Coverage, Event Coverage) have a **Get a quote** button: it opens WhatsApp with the package message, filled with that package's name.
+   - Portrait Session is highlighted and carries the tag "Best place to start".
    - The line below the cards links to WhatsApp with the general message.
 5. **Work**: 9–12 photos, filterable by the categories in content.md, opening in a lightbox. End with the Instagram link and button from content.md (TODO: handle).
 6. **How it works**: three numbered steps, then a button that scrolls to the booking section.
@@ -81,7 +81,7 @@ Copy for every section is in content.md under the matching heading.
    - Solo photographer: "Meet [Name]", portrait, short story. No team cards. Name, years and story remain content.md TODOs; switch to a studio-with-team layout (text, studio photo, years counter, team cards) only if the call shows a team.
    The button scrolls to the booking section.
 8. **Reviews**: the 3 Google review cards from content.md in a grid or slider, "Rated 4.3★ on Google" in the heading, and a link to the Google listing. Show the "From Google reviews" label.
-9. **[OPTIONAL — TODO: keep or delete]** Offers & recent shoots / Recent events: wrap in one container with `data-section="offers"` so it's easy to remove.
+9. **[OPTIONAL, TODO-CONFIRM keep or delete]** Offers & recent shoots / Recent events: wrap in one container with `data-section="offers"` so it's easy to remove.
 10. **Book & Visit**:
     - Left: the booking form, visible on the page (not a pop-up), with the fields, options and required markers from content.md. Validate required fields. On submit, build the form WhatsApp message from content.md, open `https://wa.me/2347065428557?text=...` in a new tab (TODO-CONFIRM this number is on WhatsApp), and show the success message inline.
     - Right: address, hours, visit note, Get Directions / Call / WhatsApp buttons and an embedded Google Map of 1 Timothy Lane, Aba Rd, Rumuola.
@@ -94,7 +94,7 @@ Copy for every section is in content.md under the matching heading.
 - Phone: `tel:+2347065428557`
 - WhatsApp base: `https://wa.me/2347065428557?text=` + URL-encoded message from content.md (TODO-CONFIRM WhatsApp number)
 - Directions / Google reviews: https://maps.app.goo.gl/2ZTGjPK1UAhJDNjm6
-- Instagram: TODO: handle (not on listing)
+- Instagram: handle not on listing (TODO-CONFIRM); links point to instagram.com until known
 - Website: none listed
 
 ## Technical rules
