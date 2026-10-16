@@ -285,27 +285,144 @@
       </section>
     </div>
 
-    <!-- Phase 6: book & visit -->
-    <section class="section section--alt" id="book" data-phase="6" aria-labelledby="book-title">
+    <!-- Book & Visit. The form sends its request to WhatsApp (TODO-CONFIRM 0706 542 8557 is on WhatsApp). -->
+    <section class="section section--alt" id="book" aria-labelledby="book-title">
       <div class="container">
         <p class="label">07 / Book &amp; Visit</p>
         <h2 class="display" id="book-title">[TODO: heading]</h2>
+        <p class="section-intro">[TODO: intro]</p>
+
+        <div class="book-grid">
+          <div class="book-form-wrap">
+            <form class="book-form" id="booking-form" novalidate>
+              <div class="field">
+                <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+                <p class="field-error" id="e-name" hidden>Please enter your name.</p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone / WhatsApp number <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-phone">
+                <p class="field-error" id="e-phone" hidden>Please enter a phone or WhatsApp number.</p>
+              </div>
+              <div class="field">
+                <label for="f-package">Package <span class="req" aria-hidden="true">*</span></label>
+                <select id="f-package" name="package" required aria-describedby="e-package">
+                  <option value="">Select…</option>
+                  <!-- One option per package name from content.md; values must match the data-package attributes -->
+                  <option value="[TODO: Package name]">[TODO: Package name]</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <p class="field-error" id="e-package" hidden>Please choose a package.</p>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-date">Preferred date <span class="req" aria-hidden="true">*</span></label>
+                  <input id="f-date" name="date" type="date" required aria-describedby="e-date">
+                  <p class="field-error" id="e-date" hidden>Please choose a date.</p>
+                </div>
+                <div class="field">
+                  <label for="f-time">Preferred time</label>
+                  <input id="f-time" name="time" type="time">
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-people">Number of people</label>
+                <input id="f-people" name="people" type="number" min="1" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="f-notes">Anything we should know?</label>
+                <textarea id="f-notes" name="notes" rows="4"></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit" data-track="book_submit">[TODO: submit button]</button>
+              <p class="form-small">Your request opens in WhatsApp so you can send it straight to us.</p>
+              <p class="form-success" id="form-success" role="status" hidden>[TODO: success message]</p>
+            </form>
+          </div>
+
+          <div class="visit">
+            <h3>Visit us</h3>
+            <dl class="visit-list">
+              <div><dt class="label">Address</dt><dd>1 Timothy Lane, Aba Rd, Rumuola, Port Harcourt 500262, Rivers</dd></div>
+              <div><dt class="label">Hours</dt><dd>Open 24 hours <!-- TODO-CONFIRM real studio hours --></dd></div>
+              <div><dt class="label">Note</dt><dd>[TODO: visit note]</dd></div>
+            </dl>
+            <div class="visit-actions">
+              <a class="btn btn--primary" href="https://maps.app.goo.gl/2ZTGjPK1UAhJDNjm6" target="_blank" rel="noopener" data-track="directions">Get Directions</a>
+              <a class="btn btn--outline" href="tel:+2347065428557" data-track="call_visit">Call 0706 542 8557</a>
+              <a class="btn btn--outline" href="https://wa.me/2347065428557" data-wa="general" target="_blank" rel="noopener" data-track="whatsapp_visit">WhatsApp Us</a>
+            </div>
+            <div class="map">
+              <iframe title="Map: Perfect Image Photography, 1 Timothy Lane, Aba Rd, Rumuola" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Perfect+Image+photography+R2M3%2B8W+Port+Harcourt&amp;ll=4.8333297,7.0048054&amp;z=16&amp;output=embed"></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Phase 6: FAQ -->
-    <section class="section" id="faq" data-phase="6" aria-labelledby="faq-title">
-      <div class="container">
-        <p class="label">08 / FAQ</p>
-        <h2 class="display" id="faq-title">[TODO: heading]</h2>
+    <!-- FAQ: accordion, one open at a time. Repeat .faq-item per question from content.md. -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-wrap">
+        <div>
+          <p class="label">08 / FAQ</p>
+          <h2 class="display" id="faq-title">[TODO: heading]</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">[TODO: Do you shoot outside Port Harcourt?]<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>[TODO: answer — a review mentions shoots in and outside Port Harcourt; TODO-CONFIRM travel policy]</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">[TODO: Question]<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>[TODO: Answer]</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">[TODO: Question]<span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>[TODO: Answer]</p></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Phase 6: footer -->
-  <footer class="site-footer" data-phase="6">
-    <div class="container"><p class="label">Footer</p></div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#home" aria-label="Perfect Image Photography, back to top">
+          <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <path d="M4 15V4h11M33 4h11v11M44 33v11H33M15 44H4V33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+            <text x="24" y="31" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="19" font-weight="600" fill="currentColor">PI</text>
+          </svg>
+          <span class="logo-text">
+            <span class="logo-name">Perfect <em>Image</em></span>
+            <span class="logo-sub">Photography</span>
+          </span>
+        </a>
+        <p class="footer-line">Perfect Image Photography: [TODO: services] in Rumuola, Port Harcourt.</p>
+      </div>
+      <ul class="footer-list">
+        <li>1 Timothy Lane, Aba Rd, Rumuola, Port Harcourt 500262, Rivers</li>
+        <li><a href="tel:+2347065428557" data-track="call_footer">0706 542 8557</a> (call)</li>
+        <li><a href="https://wa.me/2347065428557" data-wa="general" target="_blank" rel="noopener" data-track="whatsapp_footer">WhatsApp</a> <!-- TODO-CONFIRM this number is on WhatsApp --></li>
+        <li>Open 24 hours <!-- TODO-CONFIRM --></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" data-track="instagram_footer">Instagram: [TODO: handle]</a></li>
+      </ul>
+    </div>
+    <div class="container footer-copy">
+      <p>© 2026 Perfect Image Photography. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Floating mobile buttons: appear once the hero has scrolled out of view -->
+  <div class="float-actions" aria-label="Quick contact">
+    <a class="float-btn float-btn--wa" href="https://wa.me/2347065428557" data-wa="general" target="_blank" rel="noopener" aria-label="WhatsApp Us" data-track="whatsapp_float">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.83.83-3-.2-.32A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.77.96-.14.17-.28.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.28.37-.42.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.36 1 2.52c.12.17 1.71 2.6 4.14 3.65.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28z"/></svg>
+    </a>
+    <a class="float-btn float-btn--call" href="tel:+2347065428557" aria-label="Call 0706 542 8557" data-track="call_float">
+      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.3.0/js/glightbox.min.js" defer></script>
   <script src="js/main.js" defer></script>

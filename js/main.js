@@ -149,5 +149,85 @@
     applyFilter('all');
   }
 
+  /* Booking form → WhatsApp */
+  var form = document.getElementById('booking-form');
+  if (form) {
+    var success = document.getElementById('form-success');
+    var required = ['name', 'phone', 'package', 'date'];
+
+    function fieldEl(n) { return form.elements[n]; }
+    function setError(n, show) {
+      var el = fieldEl(n);
+      var msg = document.getElementById('e-' + n);
+      el.setAttribute('aria-invalid', String(show));
+      msg.hidden = !show;
+    }
+
+    required.forEach(function (n) {
+      fieldEl(n).addEventListener('input', function () {
+        if (fieldEl(n).value.trim()) setError(n, false);
+      });
+      fieldEl(n).addEventListener('change', function () {
+        if (fieldEl(n).value.trim()) setError(n, false);
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      success.hidden = true;
+      var firstBad = null;
+      required.forEach(function (n) {
+        var bad = !fieldEl(n).value.trim();
+        setError(n, bad);
+        if (bad && !firstBad) firstBad = fieldEl(n);
+      });
+      if (firstBad) { firstBad.focus(); return; }
+
+      var v = function (n) { return fieldEl(n).value.trim(); };
+      var msg = "Hi Perfect Image Photography, I'd like to book a session.\n" +
+        'Name: ' + v('name') + '\n' +
+        'Package: ' + v('package') + '\n' +
+        'Date: ' + v('date') + '\n' +
+        'Time: ' + v('time') + '\n' +
+        'People: ' + v('people') + '\n' +
+        'Notes: ' + v('notes');
+
+      window.track('book_submit_whatsapp', { package: v('package') });
+      window.open(window.waLink(msg), '_blank', 'noopener');
+      success.hidden = false;
+    });
+
+    /* "Book this" may have been clicked before this ran: apply a remembered package */
+    if (window.PI.selectedPackage) fieldEl('package').value = window.PI.selectedPackage;
+  }
+
+  /* FAQ accordion: one open at a time */
+  var faqButtons = document.querySelectorAll('.faq-q');
+  faqButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      faqButtons.forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        document.getElementById(b.getAttribute('aria-controls')).hidden = true;
+      });
+      if (!open) {
+        btn.setAttribute('aria-expanded', 'true');
+        document.getElementById(btn.getAttribute('aria-controls')).hidden = false;
+      }
+    });
+  });
+
+  /* Floating buttons: visible once the hero has scrolled out of view */
+  var floatBox = document.querySelector('.float-actions');
+  var hero = document.getElementById('home');
+  if (floatBox && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      floatBox.classList.toggle('is-visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+    }).observe(hero);
+  } else if (floatBox) {
+    floatBox.classList.add('is-visible');
+  }
+
   window.PI.reduceMotion = reduceMotion;
 })();
