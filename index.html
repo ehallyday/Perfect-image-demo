@@ -218,28 +218,69 @@
       </div>
     </section>
 
-    <!-- Phase 5: about -->
-    <section class="section" id="about" data-phase="5" aria-labelledby="about-title">
-      <div class="container">
-        <p class="label">04 / About</p>
-        <h2 class="display" id="about-title">[TODO: heading]</h2>
+    <!-- About: solo photographer layout (switch to a team layout only if the call shows a team) -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <figure class="about-photo">
+          <!-- REPLACE: portrait of the photographer (client's own photo, with permission) -->
+          <div class="photo-frame" role="img" aria-label="Placeholder for a portrait of the photographer"><span class="photo-placeholder">portrait</span></div>
+          <figcaption class="label">[TODO: photographer name]</figcaption>
+        </figure>
+        <div class="about-copy">
+          <p class="label">04 / About</p>
+          <h2 class="display" id="about-title">[TODO: heading]</h2>
+          <p>[TODO: Paragraph 1 — who they are, where (Rumuola, Port Harcourt), what they offer, what makes them different]</p>
+          <p>[TODO: Paragraph 2 — who they serve and the feeling they create]</p>
+          <p class="about-fact label">[TODO: years of service]</p>
+          <a class="btn btn--primary" href="#book" data-track="book_about">[TODO: button]</a>
+        </div>
       </div>
     </section>
 
-    <!-- Phase 5: reviews -->
-    <section class="section section--alt" id="reviews" data-phase="5" aria-labelledby="reviews-title">
+    <!-- Reviews: real Google reviews (first names). TODO-CONFIRM the client is happy for these to appear
+         before launch. Only 3 of the 6 reviews were visible on the listing. -->
+    <section class="section section--alt" id="reviews" aria-labelledby="reviews-title">
       <div class="container">
         <p class="label">05 / Reviews</p>
         <h2 class="display" id="reviews-title">Rated 4.3★ on Google</h2>
+        <p class="label review-source">From Google reviews</p>
+
+        <div class="review-grid">
+          <figure class="review">
+            <blockquote><p>I had an awesome experience. It was nice working with them.</p></blockquote>
+            <figcaption class="label">Amaka</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote><p>They offer Professional Photography services in and outside Port Harcourt.</p></blockquote>
+            <figcaption class="label">Silas</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote><p>Best photographer in Port Harcourt and nearby.</p></blockquote>
+            <figcaption class="label">Byrne</figcaption>
+          </figure>
+        </div>
+
+        <p class="review-link"><a href="https://maps.app.goo.gl/2ZTGjPK1UAhJDNjm6" target="_blank" rel="noopener" data-track="reviews_link">Read our Google reviews →</a></p>
       </div>
     </section>
 
-    <!-- Phase 5 (optional): offers. Delete this whole block to remove the section. -->
-    <div data-section="offers" data-phase="5">
+    <!-- OPTIONAL: offers & recent shoots. Delete this whole block (data-section="offers") to remove it.
+         Nothing on the listing: all copy is a placeholder. DEMO CONTENT: confirm or replace with the client's
+         real offers or stories before launch. -->
+    <div data-section="offers">
       <section class="section" id="offers" aria-labelledby="offers-title">
         <div class="container">
           <p class="label">06 / Offers</p>
           <h2 class="display" id="offers-title">[TODO: heading]</h2>
+
+          <div class="offer-grid">
+            <article class="offer">
+              <div class="photo-frame" role="img" aria-label="Placeholder for an offer photo"><span class="photo-placeholder">offer photo</span></div>
+              <h3>[TODO: Card title]</h3>
+              <p>[TODO: text]</p>
+              <a class="btn btn--outline" href="https://wa.me/2347065428557" data-wa="general" target="_blank" rel="noopener" data-track="whatsapp_offer">[TODO: button]</a>
+            </article>
+          </div>
         </div>
       </section>
     </div>

@@ -475,6 +475,58 @@ a:hover { color: var(--accent-hover); }
 .work-count { margin: 0 0 0 0.75rem; }
 .work-ig { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin: 0; font-weight: 600; }
 
+/* ---------- About (solo photographer) ---------- */
+.about-grid { display: grid; gap: 3rem; align-items: center; }
+.about-photo { margin: 0; max-width: 26rem; }
+.about-photo .photo-frame { max-height: none; }
+.about-photo figcaption { margin: 1.5rem 0 0; }
+.about-fact { margin-top: 1.5rem; }
+.about-copy .btn { margin-top: 0.5rem; }
+@media (min-width: 62.01rem) {
+  .about-grid { grid-template-columns: 0.8fr 1.2fr; gap: 5rem; }
+}
+
+/* ---------- Reviews ---------- */
+.review-source { margin: 0.5rem 0 2rem; color: var(--text-body); }
+.review-grid { display: grid; gap: 1.25rem; }
+.review {
+  position: relative;
+  margin: 0;
+  padding: 2.75rem 1.5rem 1.5rem;
+  background: var(--soft);
+  border-top: 2px solid var(--text-strong);
+}
+.review::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.35rem;
+  left: 1.25rem;
+  font-family: var(--font-head);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.review blockquote { margin: 0; }
+.review blockquote p {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--text-strong);
+}
+.review figcaption { margin: 0; }
+.review-link { margin: 2rem 0 0; font-weight: 600; }
+@media (min-width: 48rem) {
+  .review-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+}
+
+/* ---------- Offers (optional) ---------- */
+.offer-grid { display: grid; gap: 2rem; margin-top: 2.5rem; }
+.offer .photo-frame { aspect-ratio: 3 / 2; margin-bottom: 1.5rem; }
+@media (min-width: 48rem) {
+  .offer-grid { grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
