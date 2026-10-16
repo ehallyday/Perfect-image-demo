@@ -82,15 +82,73 @@
     </section>
 
     <!-- Phase 3: trust strip -->
-    <section class="section section--strip" id="trust" data-phase="3" aria-label="Why choose us">
-      <div class="container"><p class="label">Trust strip</p></div>
+    <section class="section section--strip" id="trust" aria-label="At a glance">
+      <div class="container">
+        <ul class="trust-list">
+          <li>4.3★ on Google (6 reviews)</li>
+          <li>[TODO: hours or availability]</li>
+          <li>[TODO: services in one line]</li>
+          <li>Rumuola, Port Harcourt · shoots in and outside Port Harcourt</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Phase 3: packages -->
-    <section class="section section--alt" id="packages" data-phase="3" aria-labelledby="packages-title">
+    <!-- Packages: stacked rows, one per package. Repeat the .pkg block per package from content.md.
+         Bookable: data-mode="book" (Book this → scrolls to form, pre-selects package).
+         Quote:    data-mode="quote" (Get a quote → WhatsApp with package message).
+         Highlighted: add class pkg--featured and the .pkg-tag. All three rows below are placeholders. -->
+    <section class="section section--alt" id="packages" aria-labelledby="packages-title">
       <div class="container">
         <p class="label">01 / Packages</p>
         <h2 class="display" id="packages-title">[TODO: heading]</h2>
+        <p class="section-intro">[TODO: intro]</p>
+
+        <div class="pkg-list">
+          <article class="pkg pkg--featured" data-mode="book" data-package="[TODO: Package name]">
+            <div class="pkg-thumb photo-frame" role="img" aria-label="Placeholder for a package photo"><span class="photo-placeholder">pkg photo</span></div>
+            <div class="pkg-body">
+              <p class="pkg-tag label">[TODO: tag]</p>
+              <h3>[TODO: Package name]</h3>
+              <p>[TODO: one-line description]</p>
+              <ul class="pkg-includes"><li>[TODO: inclusions]</li></ul>
+              <p class="pkg-meta label">Duration: [TODO:]</p>
+            </div>
+            <div class="pkg-action">
+              <p class="pkg-price">₦[ ]</p>
+              <a class="btn btn--primary" href="#book" data-book-package data-track="book_package">Book this</a>
+            </div>
+          </article>
+
+          <article class="pkg" data-mode="book" data-package="[TODO: Package name]">
+            <div class="pkg-thumb photo-frame" role="img" aria-label="Placeholder for a package photo"><span class="photo-placeholder">pkg photo</span></div>
+            <div class="pkg-body">
+              <h3>[TODO: Package name]</h3>
+              <p>[TODO: one-line description]</p>
+              <ul class="pkg-includes"><li>[TODO: inclusions]</li></ul>
+              <p class="pkg-meta label">Duration: [TODO:]</p>
+            </div>
+            <div class="pkg-action">
+              <p class="pkg-price">₦[ ]</p>
+              <a class="btn btn--primary" href="#book" data-book-package data-track="book_package">Book this</a>
+            </div>
+          </article>
+
+          <article class="pkg" data-mode="quote" data-package="[TODO: Package name]">
+            <div class="pkg-thumb photo-frame" role="img" aria-label="Placeholder for a package photo"><span class="photo-placeholder">pkg photo</span></div>
+            <div class="pkg-body">
+              <h3>[TODO: Package name]</h3>
+              <p>[TODO: one-line description]</p>
+              <ul class="pkg-includes"><li>[TODO: inclusions]</li></ul>
+              <p class="pkg-meta label">Duration: [TODO:]</p>
+            </div>
+            <div class="pkg-action">
+              <p class="pkg-price">₦[ ]</p>
+              <a class="btn btn--outline" href="https://wa.me/2347065428557" data-wa="package" target="_blank" rel="noopener" data-track="quote_package">Get a quote</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="pkg-footnote"><a href="https://wa.me/2347065428557" data-wa="general" target="_blank" rel="noopener" data-track="whatsapp_packages">[TODO: line below the cards]</a></p>
       </div>
     </section>
 
@@ -102,11 +160,17 @@
       </div>
     </section>
 
-    <!-- Phase 3: how it works -->
-    <section class="section section--alt" id="how" data-phase="3" aria-labelledby="how-title">
+    <!-- How it works -->
+    <section class="section section--alt" id="how" aria-labelledby="how-title">
       <div class="container">
         <p class="label">03 / How it works</p>
         <h2 class="display" id="how-title">[TODO: heading]</h2>
+        <ol class="steps">
+          <li class="step"><span class="step-num" aria-hidden="true">01</span><p><strong>[TODO: Step 1.]</strong> [TODO:]</p></li>
+          <li class="step"><span class="step-num" aria-hidden="true">02</span><p><strong>[TODO: Step 2.]</strong> [TODO:]</p></li>
+          <li class="step"><span class="step-num" aria-hidden="true">03</span><p><strong>[TODO: Step 3.]</strong> [TODO:]</p></li>
+        </ol>
+        <a class="btn btn--primary" href="#book" data-track="book_how">[TODO: button]</a>
       </div>
     </section>
 

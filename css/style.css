@@ -334,6 +334,83 @@ a:hover { color: var(--accent-hover); }
 .photo-frame::after  { bottom: -0.75rem; right: -0.75rem; border-width: 0 2px 2px 0; }
 .hero-photo figcaption { margin: 1.5rem 0 0; }
 
+/* ---------- Trust strip ---------- */
+.trust-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--text-strong);
+}
+.trust-list li { padding-left: 0.9rem; border-left: 2px solid var(--text-strong); line-height: 1.4; }
+@media (min-width: 62.01rem) {
+  .trust-list { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+}
+
+.section-intro { max-width: 38rem; margin-bottom: 3rem; }
+
+/* ---------- Packages: stacked rows ---------- */
+.pkg-list { border-top: 1px solid var(--rule); }
+.pkg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pkg--featured {
+  padding-inline: 1.25rem;
+  background: var(--soft);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.pkg-thumb { aspect-ratio: 4 / 3; max-height: none; }
+.pkg-tag { margin-bottom: 0.5rem; color: var(--accent); }
+.pkg-body h3 { margin-bottom: 0.35em; }
+.pkg-includes { margin: 0 0 0.75rem; padding-left: 1.1rem; }
+.pkg-meta { margin: 0; }
+.pkg-action { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.pkg-price {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.pkg-footnote { margin: 2rem 0 0; font-weight: 600; }
+@media (min-width: 48rem) {
+  .pkg { grid-template-columns: 11rem 1fr auto; gap: 2rem; }
+  .pkg-thumb { aspect-ratio: 1; }
+  .pkg-action { flex-direction: column; align-items: flex-end; min-width: 10rem; }
+}
+
+/* ---------- How it works ---------- */
+.steps {
+  display: grid;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 0;
+  list-style: none;
+}
+.step { padding-top: 1rem; border-top: 1px solid var(--text-strong); }
+.step-num {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  color: var(--text-strong);
+}
+.step p { margin: 0; }
+@media (min-width: 48rem) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

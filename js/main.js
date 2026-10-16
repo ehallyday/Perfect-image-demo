@@ -26,8 +26,27 @@
     return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
   };
   document.querySelectorAll('[data-wa]').forEach(function (a) {
-    var msg = WA_MESSAGES[a.getAttribute('data-wa')];
+    var kind = a.getAttribute('data-wa');
+    var msg;
+    if (kind === 'package') {
+      var pkg = a.closest('[data-package]');
+      msg = "Hi Perfect Image Photography, I'd like to book the " + (pkg ? pkg.getAttribute('data-package') : '[Package name]') + '.';
+    } else {
+      msg = WA_MESSAGES[kind];
+    }
     if (msg) a.href = window.waLink(msg);
+  });
+
+  /* "Book this": the link scrolls to #book; remember the package so the booking form (Phase 6)
+     can pre-select it. */
+  window.PI = window.PI || {};
+  document.querySelectorAll('[data-book-package]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var pkg = a.closest('[data-package]');
+      window.PI.selectedPackage = pkg ? pkg.getAttribute('data-package') : '';
+      var select = document.getElementById('f-package');
+      if (select && window.PI.selectedPackage) select.value = window.PI.selectedPackage;
+    });
   });
 
   /* Header: solid once scrolled */
@@ -63,5 +82,5 @@
     if (e.matches) setMenu(false);
   });
 
-  window.PI = { reduceMotion: reduceMotion };
+  window.PI.reduceMotion = reduceMotion;
 })();
