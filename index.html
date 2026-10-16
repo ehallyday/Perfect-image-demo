@@ -7,6 +7,7 @@
   <!-- Meta description: Phase 7 (final text comes from content.md once TODOs are filled) -->
   <meta name="description" content="Perfect Image Photography is a professional photography service in Rumuola, Port Harcourt, available for shoots in and outside Port Harcourt.">
   <meta name="theme-color" content="#F4EFE6">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +16,68 @@
 </head>
 <body>
 
-  <!-- Phase 2: sticky header -->
-  <header class="site-header" id="top" data-phase="2">
-    <p class="label">Header</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Sticky header: transparent over the hero, solid once scrolled -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Perfect Image Photography, home">
+        <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <path d="M4 15V4h11M33 4h11v11M44 33v11H33M15 44H4V33" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+          <text x="24" y="31" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="19" font-weight="600" fill="currentColor">PI</text>
+        </svg>
+        <span class="logo-text">
+          <span class="logo-name">Perfect <em>Image</em></span>
+          <span class="logo-sub">Photography</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">Book</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="#book" data-track="book_header">[TODO: Book Now / Check My Date]</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--primary header-btn" href="#book" data-track="book_header">[TODO: Book Now / Check My Date]</a>
+        <a class="icon-btn header-call" href="tel:+2347065428557" aria-label="Call 0706 542 8557" data-track="call_header">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        </a>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <!-- Phase 2: hero -->
-    <section class="section section--hero" id="home" data-phase="2" aria-labelledby="home-title">
-      <div class="container">
-        <p class="label">00 / Home</p>
-        <h1 class="display" id="home-title">[TODO: headline]</h1>
-        <p>[TODO: copy]</p>
+  <main id="main">
+    <!-- Hero: split screen. Text on paper at the left, one framed photo at the right. -->
+    <section class="section section--hero" id="home" aria-labelledby="home-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="label">[TODO: small label]</p>
+          <h1 id="home-title">[TODO: headline]</h1>
+          <p class="hero-sub">[TODO: subheadline — what they do, in Rumuola, Port Harcourt, and the next step]</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#book" data-track="book_hero">[TODO: Book a Session / Check My Date]</a>
+            <a class="btn btn--outline" href="https://wa.me/2347065428557" data-wa="general" data-track="whatsapp_hero" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+          <a class="hero-call" href="tel:+2347065428557" data-track="call_hero">Call 0706 542 8557</a>
+        </div>
+
+        <figure class="hero-photo">
+          <!-- REPLACE: stock/placeholder. Swap for img/hero-1.webp (client's own work, with permission). -->
+          <div class="photo-frame" role="img" aria-label="Placeholder for a Perfect Image Photography hero photo">
+            <span class="photo-placeholder">hero-1 photo</span>
+          </div>
+          <figcaption class="label">01 / Rumuola, Port Harcourt</figcaption>
+        </figure>
       </div>
     </section>
 
