@@ -1,0 +1,2 @@
+Image sources (stock for the demo — replace with the client's own work after getting permission).
+Format: filename | source URL | licence

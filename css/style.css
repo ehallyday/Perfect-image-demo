@@ -1,0 +1,122 @@
+/* Perfect Image Photography — "The Proof Sheet"
+   Phase 1: tokens, fonts, base typography, section scaffolding. */
+
+:root {
+  /* Colour tokens (see CLAUDE.md) */
+  --base:         #F4EFE6;
+  --base-alt:     #E9E1D2;
+  --accent:       #B8401F;
+  --accent-hover: #96310F;
+  --text-strong:  #14201B;
+  --text-body:    #3A433F;
+  --soft:         #FBF8F2;
+  --whatsapp:     #128C4A;
+  --rule:         rgba(20, 32, 27, 0.35);
+
+  /* Type */
+  --font-head:  "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:  "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-label: "DM Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* Fluid type scale */
+  --step-label:   0.75rem;
+  --step-body:    1.0625rem;
+  --step-h3:      clamp(1.375rem, 1.1rem + 1.2vw, 1.875rem);
+  --step-h2:      clamp(2.25rem, 1.4rem + 4vw, 4.5rem);
+  --step-display: clamp(2.75rem, 1.5rem + 6vw, 6.5rem);
+
+  /* Layout */
+  --gutter:   clamp(1.25rem, 5vw, 3rem);
+  --max:      72rem;
+  --section-y: clamp(4rem, 3rem + 6vw, 8rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* room for the sticky header */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--step-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, h4 {
+  margin: 0 0 0.5em;
+  color: var(--text-strong);
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+h1, .display { font-size: var(--step-display); }
+h2.display  { font-size: var(--step-h2); }
+h3          { font-size: var(--step-h3); line-height: 1.15; letter-spacing: -0.01em; }
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 400; }
+
+p { margin: 0 0 1em; }
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { color: var(--accent-hover); }
+
+/* Mono "frame number" label */
+.label {
+  margin: 0 0 1.25rem;
+  color: var(--text-strong);
+  font-family: var(--font-label);
+  font-size: var(--step-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--max));
+  margin-inline: auto;
+}
+
+/* Sections: thin ink rule on top carries the frame number */
+.section {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--rule);
+}
+.section--hero  { border-top: 0; padding-top: calc(var(--section-y) + 3rem); }
+.section--alt   { background: var(--base-alt); }
+.section--strip { padding-block: 2rem; background: var(--soft); }
+
+.site-header, .site-footer { padding-block: 1.25rem; }
+.site-footer { background: var(--text-strong); color: var(--soft); }
+.site-footer .label { color: var(--soft); }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
